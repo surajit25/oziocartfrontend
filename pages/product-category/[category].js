@@ -663,34 +663,49 @@ const MobileSortOpen=()=>{
 
 
 
-export async function getStaticPaths() {
-    // Call an external API endpoint to get posts
-     const res = await axios.get(`${server}/getallcategory`).then(res=>{return res.data})
+// export async function getStaticPaths() {
+//     // Call an external API endpoint to get posts
+//      const res = await axios.get(`${server}/getallcategory`).then(res=>{return res.data})
 
-    // Get the paths we want to pre-render based on posts
+//     // Get the paths we want to pre-render based on posts
    
 
-    const paths =res.map((item) => ({
-      params: {category:item.name.replaceAll(" ","-").toLowerCase() },
-    }))
+//     const paths =res.map((item) => ({
+//       params: {category:item.name.replaceAll(" ","-").toLowerCase() },
+//     }))
   
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: false }
-  }
+//     // We'll pre-render only these paths at build time.
+//     // { fallback: false } means other routes should 404.
+//     return { paths, fallback: false }
+//   }
   
   // This also gets called at build time
 
 
-  export async function getStaticProps({ params }) {
+  // export async function getStaticProps({ params }) {
    
 
-    const {category} = params
+  //   const {category} = params
+
+
+  //   // Pass post data to the page via props
+  //   return { props: {category:category.replaceAll("-"," ") } }
+  // }
+
+
+
+  export async function getServerSideProps( context ) {
+   
+
+     const category= context.query.category
+
+    
 
 
     // Pass post data to the page via props
-    return { props: {category:category.replaceAll("-"," ") } }
+    return { props: { category:category.replaceAll("-"," ")} }
   }
+
 
 
 

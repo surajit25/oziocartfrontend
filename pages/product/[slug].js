@@ -686,44 +686,26 @@ function ProductPage(props){
 }
 
 
-export async function getStaticPaths() {
-    // Call an external API endpoint to get posts
-     const res = await Api.post(`${server}/allproductcommonsection`).then(res=>{return res.data})
+// export async function getStaticPaths() {
+//     // Call an external API endpoint to get posts
+//      const res = await Api.post(`${server}/allproductcommonsection`).then(res=>{return res.data})
 
-    // Get the paths we want to pre-render based on posts
+//     // Get the paths we want to pre-render based on posts
    
 
-    const paths =res.map((item) => ({
-      params: {slug:item.slug },
-    }))
+//     const paths =res.map((item) => ({
+//       params: {slug:item.slug },
+//     }))
   
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: false }
-  }
+//     // We'll pre-render only these paths at build time.
+//     // { fallback: false } means other routes should 404.
+//     return { paths, fallback: false }
+//   }
   
-  // This also gets called at build time
+//   // This also gets called at build time
 
 
-  export async function getStaticProps({ params }) {
-    // params contains the post `id`.
-    // If the route is like /posts/1, then params.id is 1
-    // const res = await fetch(`https://.../posts/${params.id}`)
-    // const post = await res.json()
-
-    const {slug} = params
-
-    // const res = await Api.post(`${server}/getproductbyslug`,{slug:slug}).then(res=>{return res.data})
-   
-    const res2 = await Api.post(`${server}/productcommonsectionbyslug`,{slug:slug}).then(res=>{return res.data})
-    
-  
-    // Pass post data to the page via props
-    return { props: {common:res2,slug:slug } }
-  }
-
-
-//   export async function  getServerSideProps({ params }) {
+//   export async function getStaticProps({ params }) {
 //     // params contains the post `id`.
 //     // If the route is like /posts/1, then params.id is 1
 //     // const res = await fetch(`https://.../posts/${params.id}`)
@@ -739,6 +721,24 @@ export async function getStaticPaths() {
 //     // Pass post data to the page via props
 //     return { props: {common:res2,slug:slug } }
 //   }
+
+
+  export async function  getServerSideProps({ params }) {
+    // params contains the post `id`.
+    // If the route is like /posts/1, then params.id is 1
+    // const res = await fetch(`https://.../posts/${params.id}`)
+    // const post = await res.json()
+
+    const {slug} = params
+
+    // const res = await Api.post(`${server}/getproductbyslug`,{slug:slug}).then(res=>{return res.data})
+   
+    const res2 = await Api.post(`${server}/productcommonsectionbyslug`,{slug:slug}).then(res=>{return res.data})
+    
+  
+    // Pass post data to the page via props
+    return { props: {common:res2,slug:slug } }
+  }
   
   
 
