@@ -1,0 +1,16 @@
+.product{
+    min-height: 100vh;
+}
+
+.productdescription{
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.cartshow{
+    right: 10px;
+    top:10px;
+}

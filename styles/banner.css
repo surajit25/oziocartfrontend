@@ -1,0 +1,35 @@
+.firstbanner{
+    margin-top: 80px;
+}
+
+.bannercontent{
+    left: 20%;
+    top: 40%;
+}
+
+.buynow{
+    left: 20%;
+    top: 50%;
+}
+
+
+.text1{
+    left: 10%;
+    top: 10%;
+}
+
+@media (max-width:500px) {
+
+
+    .bannercontent{
+        top: 25%;
+    }
+
+    .title{
+        font-size: 12px;
+    }
+    
+    .firstbanner{
+        margin-top: 120px;
+    }
+}

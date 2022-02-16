@@ -1,0 +1,97 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto,Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img:hover{
+  cursor: pointer;
+}
+
+svg:hover{
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.category{
+  min-height: 50vh;
+}
+
+
+
+
+.mainfooter{
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+.text-capitalize{
+  text-transform: capitalize;
+}
+
+
+
+
+.carsouel {
+  overflow: hidden;
+  position: relative;
+}
+
+.inner{
+  white-space: nowrap;
+  transition: all 0.6s ease;
+}
+
+.carsouel-item{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  color: wheat;
+  width: 100%;
+}
+
+.button{
+  height: 100px;
+  width: 40px;
+  background-color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.imagecontainer{
+  background-color: gainsboro;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+.full {
+  transition: opacity 400ms ease 0ms;
+}
+
+img,svg{
+  cursor:pointer
+}
+
+
+.desksearch::-webkit-scrollbar{
+  display: none;
+}
